@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Úkolníček</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<h1>Ukládání polí a objektů do Local Storage</h1>
+
+	<p>Local Storage je jednoduché úložiště typu klíč-hodnota. Klíč je název, pod jakým je hodnota v Local Storage uložená. Hodnota ale může být pouze <strong>textový řetězec</strong>. Pokud chceme do Local Storage ukládat složitější datové struktury, např. objekty nebo pole, musíme je před uložením převést do textové podoby. A při čtení z Local Storage je naopak převést z textu do jejich původní podoby. </p>
+
+	<p>K tomuto převodu slouží funkce <strong>JSON.stringify()</strong> pro převod na text a funkce <strong>JSON.parse()</strong> pro převod zpět na objekt, pole, atd.</p>
+
+	<p>
+		Jednoduchý popis najdeš třeba zde:<br>
+		<a href="https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm">https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm</a>
+	</p>
+
+	<hr>
+
+	<h2>Úkolníček</h2>
+
+	<p>Jako příklad si uděláme jednoduchý úkolníček. Náš úkolníček bude pole objektů, kde v každém objektu je vždy popis úkolu a jeho důležitost.</p>
+
+	<p>Aplikace umožňuje úkoly (=objekty v poli) přidávat a mazat. Vždy po každém přidání nebo smazání uložíme celé pole do Local Storage a překreslíme celý seznam úkolů.</p>
+
+	<p>I když stránku zavřeš a znovu otevřeš (nebo obnovíš/refresh, vypneš počítač, apod.), tak uvidíš, že seznam úkolů zůstane díky Local Storage zachován.</p>
+
+	<hr>
+
+	<h3>Seznam úkolů</h3>
+
+	<ul id="seznam">
+		<!-- sem budeme generovat seznam úkolů -->
+	</ul>
+
+	<form id="formular">
+		<input id="popis" type="text" placeholder="popis úkolu">
+
+		<select id="dulezitost">
+			<option>nízká</option>
+			<option>střední</option>
+			<option>vysoká</option>
+		</select>
+
+		<button onclick="pridejUkol()" class="btn-ulozit">Přidat úkol</button>
+	</form>
+
+
+	<script src="main.js"></script>
+
+</body>
+</html>
