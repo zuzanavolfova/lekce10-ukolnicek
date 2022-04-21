@@ -67,5 +67,18 @@ function odstranUkol() {
 
 // funkce pro přidání úkolu do seznamu
 function pridejUkol() {
+	let popis = document.querySelector('#popis').value;
+	let dulezitost = document.querySelector('#dulezitost').value;
+	if (popis=== '') {
+		alert ('Prosim, zadej popis ukolu.');
+		return;
+	}
 
+	let ukol = {};
+	ukol.popis = popis;
+	ukol.dulezitost = dulezitost;
+
+	ukoly.push(ukol);
+
+	ulozUkoly();
 }
