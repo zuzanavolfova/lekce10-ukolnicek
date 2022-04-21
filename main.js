@@ -61,7 +61,7 @@ if (ukoly.length > 0) {
 // jako parametry očekává index úkolu v poli, popis a důležitost úkolu
 function vytvorPrvekUkolu(index, popis, dulezitost) {
 	let liElement = document.createElement('li');
-	liElement.textContent = '$(popis) - $(dulezitost) důležitost';
+	liElement.textContent = popis + ' - ' + dulezitost + " důležitost";
 
 	let buttonElement= document.createElement('button');
 	buttonElement.textContent='x';
@@ -75,7 +75,11 @@ function vytvorPrvekUkolu(index, popis, dulezitost) {
 
 // funkce pro smazání úúkolu při kliknutí na tlačítko "x" vedle popisu úkolu
 function odstranUkol() {
+	let index = this.dataset.index;
+	ukoly.splice(index,1);
 
+	ulozUkoly();
+	zobrazUkoly();
 }
 
 
