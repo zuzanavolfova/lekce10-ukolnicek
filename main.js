@@ -24,7 +24,7 @@ ukoly = [
 nactiUkoly();
 // a hned seznam úkolů zobrazíme
 
-
+zobrazUkoly();
 
 // funkce pro načtení seznamu úkolů z Local Storage
 function nactiUkoly() {
